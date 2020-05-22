@@ -1,6 +1,7 @@
 import React from 'react'
 
-const Comics = () => {
+export type ComicsProps = {}
+function Comics(props: ComicsProps) {
   return <div>Comics</div>
 }
 

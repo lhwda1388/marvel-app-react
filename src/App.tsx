@@ -1,17 +1,21 @@
 import React from 'react'
 import { HashRouter, Route } from 'react-router-dom'
-import Characters from './routes/Characters'
-import Header from './components/Header'
-import Footer from './components/Footer'
+import CharactersPage from './pages/characters/CharactersPage'
+import CharacterDetailPage from './pages/characters/CharacterDetailPage'
+import ComicsPage from './pages/comics/ComicsPage'
+import Header from './components/common/Header'
+import Footer from './components/common/Footer'
 import './App.scss'
-import Comics from './routes/Comics'
 
-function App() {
+export type AppProps = {}
+function App(props: AppProps) {
   return (
     <HashRouter>
       <Header />
-      <Route path="/" exact={true} component={Characters} />
-      <Route path="/comics" component={Comics} />
+      <Route path="/" exact={true} component={CharactersPage} />
+      <Route path="/characters" exact={true} component={CharactersPage} />
+      <Route path="/comics" component={ComicsPage} />
+      <Route path="/characters/:id" component={CharacterDetailPage} />
       <Footer />
     </HashRouter>
   )

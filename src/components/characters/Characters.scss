@@ -1,0 +1,65 @@
+@import '../../style/mixin.scss';
+
+.characters {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-content: flex-start;
+
+  li {
+    position: relative;
+    list-style: none;
+    background-color: black;
+    box-sizing: border-box;
+    z-index: 1;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: all 0.4s;
+      width: 100%;
+      height: 0%;
+      background-color: red;
+      z-index: -1;
+    }
+    &:hover::after {
+      height: 100%;
+      z-index: -1;
+    }
+
+    @include mobile() {
+      width: 216px;
+      height: 315px;
+    }
+    @include tablet() {
+      width: 182px;
+      height: 355px;
+    }
+    @include desktop() {
+      width: 178px;
+      height: 355px;
+    }
+    a {
+      color: #fff;
+    }
+    .img-box {
+      border-bottom: solid 3px red;
+      height: 80%;
+    }
+    .img-box img {
+      width: 100%;
+      height: 100%;
+    }
+    .text-box {
+      width: 100%;
+      height: 20%;
+    }
+  }
+  &::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
