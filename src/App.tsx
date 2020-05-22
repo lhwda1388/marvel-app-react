@@ -14,7 +14,7 @@ function App(props: AppProps) {
       <Header />
       <Switch>
         <Route path="/" exact={true} component={CharactersPage} />
-        <Route path="/characters" component={CharactersPage} />
+        <Route path="/characters" exact={true} component={CharactersPage} />
         <Route path="/comics" component={ComicsPage} />
         <Route path="/characters/:id" component={CharacterDetailPage} />
       </Switch>
