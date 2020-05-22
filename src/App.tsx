@@ -1,5 +1,5 @@
 import React from 'react'
-import { HashRouter, Route } from 'react-router-dom'
+import { HashRouter, Route, Switch } from 'react-router-dom'
 import CharactersPage from './pages/characters/CharactersPage'
 import CharacterDetailPage from './pages/characters/CharacterDetailPage'
 import ComicsPage from './pages/comics/ComicsPage'
@@ -12,10 +12,12 @@ function App(props: AppProps) {
   return (
     <HashRouter>
       <Header />
-      <Route path="/" exact={true} component={CharactersPage} />
-      <Route path="/characters" exact={true} component={CharactersPage} />
-      <Route path="/comics" component={ComicsPage} />
-      <Route path="/characters/:id" component={CharacterDetailPage} />
+      <Switch>
+        <Route path="/" exact={true} component={CharactersPage} />
+        <Route path="/characters" component={CharactersPage} />
+        <Route path="/comics" component={ComicsPage} />
+        <Route path="/characters/:id" component={CharacterDetailPage} />
+      </Switch>
       <Footer />
     </HashRouter>
   )
