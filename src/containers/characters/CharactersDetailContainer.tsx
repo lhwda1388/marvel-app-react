@@ -1,33 +1,19 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import CharacterDetail from '../../components/characters/CharacterDetail'
 import { urlForCharacters, hash } from '../../contants/info'
-import axios from 'axios'
 import Loader from '../../components/common/Loader'
+import { useGetFetch } from '../../hooks/useGetFetch'
 
 export type CharactersDetailContainerProps = {
   match?: any
 }
 function CharactersDetailContainer(props: CharactersDetailContainerProps) {
-  const [character, setCharacter] = useState<any>()
-  const [loaded, setLoaded] = useState<boolean>(false)
   const {
     match: {
-      params: { id },
-    },
+      params: { id }
+    }
   } = props
-
-  useEffect(() => {
-    fetchData()
-  })
-  const fetchData = async () => {
-    const {
-      data: {
-        data: { results },
-      },
-    } = await axios.get(`${urlForCharacters}/${id}?${hash}`)
-    setCharacter(results[0])
-    setLoaded(true)
-  }
+  const [loaded, result] = useGetFetch(`${urlForCharacters}/${id}`, hash)
 
   return (
     <>
@@ -35,11 +21,11 @@ function CharactersDetailContainer(props: CharactersDetailContainerProps) {
         <Loader />
       ) : (
         <CharacterDetail
-          name={character.name}
-          desc={character.desc}
-          urls={character.urls}
+          name={result[0].name}
+          desc={result[0].desc}
+          urls={result[0].urls}
           thumnail={
-            character.thumbnail.path + '.' + character.thumbnail.extension
+            result[0].thumbnail.path + '.' + result[0].thumbnail.extension
           }
         />
       )}

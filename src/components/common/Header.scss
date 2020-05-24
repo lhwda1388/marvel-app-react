@@ -1,0 +1,21 @@
+header {
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  .header__in {
+    padding: 10px 0;
+    background-color: #005cb2;
+    text-align: center;
+  }
+  .navbar {
+    background-color: #1e88e5;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a {
+      padding: 0 5px;
+    }
+  }
+}
