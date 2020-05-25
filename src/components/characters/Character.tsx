@@ -9,14 +9,16 @@ type CharacterProps = {
 function Character({ id, thumbnail, name }: CharacterProps) {
   return (
     <li>
-      <Link to={`/characters/${id}`}>
-        <div className="img-box">
-          <img src={thumbnail} alt={name} />
-        </div>
-        <div className="text-box">
-          <p>{name}</p>
-        </div>
-      </Link>
+      <div className="box-wrapper">
+        <Link to={`/characters/${id}`}>
+          <div className="img-box">
+            <img src={thumbnail} alt={name} />
+          </div>
+          <div className="text-box">
+            <span>{name}</span>
+          </div>
+        </Link>
+      </div>
     </li>
   )
 }

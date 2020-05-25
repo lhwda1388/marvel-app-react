@@ -16,7 +16,7 @@ export function useGetFetch(url: string, params: string): Array<any> {
       } = await instance.get(`${url}?${params}`, {
         timeout: 3 * 1000
       })
-      console.log(`result: ${results}`)
+      console.log(results)
       setResult(results)
       setLoaded(true)
     } catch (error) {

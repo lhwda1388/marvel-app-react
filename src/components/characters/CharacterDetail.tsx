@@ -1,4 +1,5 @@
 import React from 'react'
+import './CharacterDetail.scss'
 
 export type CharacterDetail = {
   name: string
@@ -9,17 +10,17 @@ export type CharacterDetail = {
 
 function CharacterDetail({ name, desc, urls, thumnail }: CharacterDetail) {
   return (
-    <div>
-      <p>
-        <img src={thumnail} alt={name} />
-      </p>
-      <p>name: {name}</p>
-      <p>desc: {desc}</p>
-      <ul>
+    <div className="detail-box">
+      <img src={thumnail} alt={name} />
+      <p className="name">name: {name}</p>
+      <p className="desc">desc: {desc}</p>
+      <ul className="urls">
         {urls.map((urlInfo, idx) => {
           return (
             <li key={idx}>
-              <a href={urlInfo.url}>{urlInfo.type}</a>
+              <a href={urlInfo.url} target="__blank">
+                {urlInfo.type}
+              </a>
             </li>
           )
         })}

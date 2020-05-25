@@ -22,7 +22,7 @@ function CharactersDetailContainer(props: CharactersDetailContainerProps) {
       ) : (
         <CharacterDetail
           name={result[0].name}
-          desc={result[0].desc}
+          desc={result[0].description}
           urls={result[0].urls}
           thumnail={
             result[0].thumbnail.path + '.' + result[0].thumbnail.extension
