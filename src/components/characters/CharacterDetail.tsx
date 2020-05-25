@@ -10,10 +10,14 @@ export type CharacterDetail = {
 
 function CharacterDetail({ name, desc, urls, thumnail }: CharacterDetail) {
   return (
-    <div className="detail-box">
-      <img src={thumnail} alt={name} />
-      <p className="name">name: {name}</p>
-      <p className="desc">desc: {desc}</p>
+    <div className="character-detail-box">
+      <div className="character">
+        <div className="img-wrap">
+          <img src={thumnail} alt={name} />
+          <span className="name">{name}</span>
+          <span className="desc">{desc}</span>
+        </div>
+      </div>
       <ul className="urls">
         {urls.map((urlInfo, idx) => {
           return (

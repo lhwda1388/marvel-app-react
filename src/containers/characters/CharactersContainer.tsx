@@ -7,7 +7,8 @@ import { useGetFetch } from '../../hooks/useGetFetch'
 export type CharactersContainersProps = {}
 
 function CharactersContainers(props: CharactersContainersProps) {
-  const [loaded, result] = useGetFetch('/data/characters.json', hash)
+  // const [loaded, result] = useGetFetch('/data/characters.json', hash)
+  const [loaded, result] = useGetFetch(urlForCharacters, hash)
 
   return <>{!loaded ? <Loader /> : <Characters characters={result} />}</>
 }

@@ -1,7 +1,8 @@
 import React from 'react'
+import ComicsContainer from '../../containers/comics/ComicsContainer'
 
 function ComicsPage() {
-  return <div>ComicsPage</div>
+  return <ComicsContainer />
 }
 
 export default ComicsPage

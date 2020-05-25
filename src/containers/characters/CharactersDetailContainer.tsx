@@ -14,6 +14,7 @@ function CharactersDetailContainer(props: CharactersDetailContainerProps) {
     }
   } = props
   const [loaded, result] = useGetFetch(`${urlForCharacters}/${id}`, hash)
+  // const [loaded, result] = useGetFetch(`/data/1010354.json`, hash)
 
   return (
     <>
