@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babel/polyfill": "^7.10.1",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
@@ -12,11 +13,14 @@
     "@types/react-dom": "^16.9.0",
     "@types/react-router-dom": "^5.1.5",
     "axios": "^0.19.2",
+    "core-js": "^3.6.5",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
+    "react-app-polyfill": "^1.0.6",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
+    "regenerator-runtime": "^0.13.5",
     "typescript": "~3.7.2"
   },
   "scripts": {
@@ -44,6 +48,7 @@
       "not op_mini all"
     ],
     "development": [
+      "ie 10",
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
